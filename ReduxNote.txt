@@ -35,3 +35,23 @@ React is a library used to build a user interfaces
 Redux is a library for managing state in a predictable way in JavaScript applications
 React-redux is a library that provides bindings to use React and Redux together
 in an application
+
+
+
+Three core concepts contd.
+
+Cake shop scenrio       Redux       Purpose
+
+shop                    store       Holds the state of your application
+
+Intension to Buy-Cake   Action      Describes what happened
+
+Shopkeeper              Reducer     Ties the store and actions together
+
+
+
+A store that holds the state of your application.
+
+An action that describes the changes in the state of the appliction.
+
+A reducer which actually carries out the state transition depending on the action.
