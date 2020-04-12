@@ -184,3 +184,14 @@ case: FETCH_USERS_FAILURE
 loading: false
 error: error( from API )
 
+
+
+Async action creators
+
+axios
+Request to an API end point
+
+redux-thunk
+Define async action creators
+Middleware
+
