@@ -1,15 +1,38 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { fetchUsers} from '../redux';
 
 
-
-function UsersContainer() {
-    return (
+function UsersContainer({ userData, fetchUsers }) {
+    useEffect(() => {
+        fetchUsers()
+    }, [])
+    return userData.loading ? (
+       <h2>Loading</h2>
+    ) : userData.error ? (
+        <h2>{userData.error}</h2>
+    ) : (
         <div>
-            USERS
+            <h2>Users List</h2>
+            <div>
+                {userData && 
+                userData.users &&
+                userData.users.map(user => <p>{user.name}</p>)}
+            </div>
         </div>
-    );
+    )
+}
+
+const mapStateToProps = state => {
+    return {
+        userData: state.user
+    }
 };
 
+const mapDispatchTopProps = dispatch => {
+    return {
+        fetchUsers: () => dispatch(fetchUsers())
+    }
+}
 
-
-export default UsersContainer;
+export default connect(mapStateToProps, mapDispatchTopProps) (UsersContainer);
