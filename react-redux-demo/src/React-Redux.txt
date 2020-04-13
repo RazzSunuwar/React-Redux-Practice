@@ -5,3 +5,17 @@ Components can access state and dispatch actions
 Reacts Hooks
 React Redux v7.1
 Subscribe to store and dispatch actions without connections()
+
+
+
+Actions 
+
+Synchronous Actions
+As soon as an action was dispatched, the state was immediately updated.
+If you dispatch the BUY_CAKE action, the numOfCakes was right away decremented by 1.
+Same with BUY_ICECREM action as well.
+
+
+Async Actions
+Asychronous API calls to fetch data from an end point and use that and use that data in your
+application.
